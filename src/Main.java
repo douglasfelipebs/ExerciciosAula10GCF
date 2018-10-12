@@ -15,6 +15,7 @@ public class Main {
             + "\n 1 - Tabuada;"
             + "\n 2 - Fatorial;"
             + "\n 3 - Báscara;"
+            + "\n 4 - Pitágoras;"
             + "\n 0 - Sair;";
     
     public static void main(String[] args) {
@@ -80,6 +81,28 @@ public class Main {
                     System.out.println(bascara(a, b, c));
                     break;
                 }
+                case 4: {
+                    System.out.println("Informe um valor para A:");
+                    String aToConvert = s.nextLine();
+                    int a = 0;
+                    try {
+                        a = Integer.parseInt(aToConvert);
+                    } catch (Exception e) {
+                        System.out.println("Valor de A inválido! (O valor deve ser numérico)");
+                        break;
+                    }
+                    System.out.println("Informe um valor para B:");
+                    String bToConvert = s.nextLine();
+                    int b = 0;
+                    try {
+                        b = Integer.parseInt(bToConvert);
+                    } catch (Exception e) {
+                        System.out.println("Valor de B inválido! (O valor deve ser numérico)");
+                        break;
+                    }
+                    System.out.println(pitagoras(a, b));
+                    break;
+                }
                 case 0:{
                     System.exit(0);
                 }
@@ -126,4 +149,10 @@ public class Main {
         return "As raízes da equação " + a + "x² + " + b + "x + " + c + " são: " + x1 + " e " + x2;
     }
     
+    public static String pitagoras(int a, int b){
+        double c = 0;
+        c = (a * a) + (b * b);
+        c = Math.sqrt(c);
+        return "A hiponenusa (C) para os catetos " + a + " (A) e " + b + " (B) é: " + c;
+    }
 }
