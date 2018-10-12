@@ -14,6 +14,7 @@ public class Main {
     static String menu = "Informe uma operação a ser realizada:"
             + "\n 1 - Tabuada;"
             + "\n 2 - Fatorial;"
+            + "\n 3 - Báscara;"
             + "\n 0 - Sair;";
     
     public static void main(String[] args) {
@@ -46,6 +47,37 @@ public class Main {
                         break;
                     }
                     System.out.println(fatorial(1, numero));
+                    break;
+                }
+                case 3:{
+                    System.out.println("Informe um valor para A:");
+                    String aToConvert = s.nextLine();
+                    int a = 0;
+                    try {
+                        a = Integer.parseInt(aToConvert);
+                    } catch (Exception e) {
+                        System.out.println("Valor de A inválido! (O valor deve ser numérico)");
+                        break;
+                    }
+                    System.out.println("Informe um valor para B:");
+                    String bToConvert = s.nextLine();
+                    int b = 0;
+                    try {
+                        b = Integer.parseInt(bToConvert);
+                    } catch (Exception e) {
+                        System.out.println("Valor de B inválido! (O valor deve ser numérico)");
+                        break;
+                    }
+                    System.out.println("Informe um valor para C:");
+                    String cToConvert = s.nextLine();
+                    int c = 0;
+                    try {
+                        c = Integer.parseInt(cToConvert);
+                    } catch (Exception e) {
+                        System.out.println("Valor de A inválido! (O valor deve ser numérico)");
+                        break;
+                    }
+                    System.out.println(bascara(a, b, c));
                     break;
                 }
                 case 0:{
@@ -84,4 +116,14 @@ public class Main {
         valor--;
         return fatorial(total, valor);
     }
+    
+    public static String bascara(int a, int b, int c){
+        double x1 = 0;
+        double x2 = 0;
+        
+        x1 = ((b*-1) + Math.sqrt((b*b) - (4 * a * c))) / 2*a;
+        x2 = ((b*-1) - Math.sqrt((b*b) - (4 * a * c))) / 2*a;
+        return "As raízes da equação " + a + "x² + " + b + "x + " + c + " são: " + x1 + " e " + x2;
+    }
+    
 }
